@@ -237,7 +237,7 @@ function Game(){
 				target_result.append(_item_target);
 				c_timeout = setTimeout(function(){
 					_item_target.remove();
-				}, 3000)
+				}, 2000)
 			}
 		}
 
