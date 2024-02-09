@@ -4,9 +4,12 @@
 	<title>Boc tham</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
-		body{
-			max-width: 1024px;
-			margin: auto;
+		body {
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    bottom: 0;
+		    right: 0;
 		}
 		*{
 			box-sizing: border-box;
@@ -107,10 +110,11 @@
 			padding: 6px;
 		}
 		.game-results{
-		    height: calc(100% - 33%);
+		    height: calc(100% - 32%);
 		}
 		.game-ticks{
-		    height: 33%;
+			padding-top: 10px;
+		    height: 32%;
 		}
 		.game-item{
 			width: calc(100%/8) !important;
@@ -126,8 +130,9 @@
 		    cursor: pointer;
 		}
 		.game-tick{
-			font-size: 1.3em;
+			font-size: 1em;
 		    font-weight: bold;
+		    border: 1px solid;
 		}
 
 		#c_options:checked ~ div .app-options{
