@@ -21,7 +21,7 @@
 		    top: 50%;
 		    background-size: 100% 100%;
 		    width: 80%;
-		    height: 50%;
+		    height: 40%;
 		}
 		@keyframes a_item{
 			0%{
@@ -32,7 +32,7 @@
 			100%{
 			    transform: translate(-50%,-50%);
 		    width: 80%;
-		    height: 50%;
+		    height: 40%;
 			}
 		}
 		#app{
@@ -42,7 +42,8 @@
 			width: 100%;
 		}
 		.app-options{
-			width: 240px;
+			width: 265px;
+			padding: 8px;
 		}
 		.app-methods{
 			display: flex;
@@ -93,31 +94,40 @@
 		.game-panel{
 			display: flex;
 		    flex-direction: column;
-		}
-		.game-item{
-			width: calc(100%/7) !important;
+		    height: 100vh;
 		}
 		.game-item label{
 		    font-size: 2em;
-		    color: #ffffff;
 		    font-weight: bold;
 		    text-shadow: 2px 2px #4e4e4e;
 		}
 		.game-ticks, .game-results{
-			display: table;
 			position: relative;
+			height: 100%;
+			overflow: auto;
+			padding: 6px;
+		}
+		.game-results{
+		    height: calc(100% - 25%);
+		}
+		.game-ticks{
+		    height: 25%;
+		}
+		.game-item{
+			width: calc(100%/8) !important;
+		    color: #80ff7b;
 		}
 		.game-tick, .game-item{
 		    display: inline-block;
 		    padding: 10px;
-		    width: calc(100%/12);
+		    width: calc(100%/15);
 		    text-align: center;
 		    background: url(assets/imgs/tick.jpg);
 		    background-size: 100% 100%;
 		    cursor: pointer;
 		}
 		.game-tick{
-			font-size: 1.5em;
+			font-size: 1.3em;
 		    font-weight: bold;
 		}
 
@@ -135,7 +145,7 @@
 		.show-btn{
 			position: absolute;
 		    left: -43px;
-		    top: 15px;
+		    top: -15px;
 		    font-size: 47px;
 		    color: #ff8c00;
 		    font-weight: bolder;
@@ -144,10 +154,10 @@
 
 		@media screen and (max-width: 960px){
 			.game-item{
-				width: calc(100%/5) !important;
+				width: calc(100%/6) !important;
 			}
 			.game-tick{
-				width: calc(100%/8) !important;
+				width: calc(100%/11) !important;
 			}
 		}
 
@@ -156,7 +166,7 @@
 				width: calc(100%/4) !important;
 			}
 			.game-tick{
-				width: calc(100%/6) !important;
+				width: calc(100%/8) !important;
 			}
 		}
 	</style>

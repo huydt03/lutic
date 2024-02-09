@@ -203,23 +203,40 @@ function Game(){
 
 	let data = {};
 
+	let _item_target;
+	let _target;
+	let item_target_selected;
+	let c_timeout;
+
 	function TickItem(num, item_target){
 		let target = document.createElement('div');
 		target.classList = 'game-tick';
 		target.innerHTML = '?';
 
 		target.onclick = function(){
+			if(_target)
+				_target.style.color = 'unset';
+			_target = target;
+			target.onclick = '';
 			target.innerHTML = num;
+			target.style.color = 'red';
 			target.style.background = 'none';
 			if(item_target){
-				let item = item_target.cloneNode(true);
-				item.innerHTML = '';
+				if(_item_target)
+					_item_target.remove();
+				if(item_target_selected)
+					item_target_selected.style.color = '';
+				clearTimeout(c_timeout);
+				item_target_selected = item_target;
+				item_target_selected.style.color = '#fff';
+				_item_target = item_target.cloneNode(true);
+				_item_target.innerHTML = '';
 				item_target.style.filter = 'grayscale(100%)';
-				item.classList.remove('game-item');
-				item.classList.add('animate');
-				target_result.append(item);
-				setTimeout(function(){
-					item.remove();
+				_item_target.classList.remove('game-item');
+				_item_target.classList.add('animate');
+				target_result.append(_item_target);
+				c_timeout = setTimeout(function(){
+					_item_target.remove();
 				}, 3000)
 			}
 		}
